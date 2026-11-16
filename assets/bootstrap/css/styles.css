@@ -1,0 +1,599 @@
+/* =========================================================
+    styles.css -> HOME + partes compartidas (Comentado y Explicado)
+   ========================================================= */
+
+/* Paleta de la marca (valores escritos a mano en todo el CSS):
+   bordó #8b0028 | bordó oscuro #6d001f | rosa #ffd9e2 | crema #fff9f6
+   card #f8f4f1 | texto #2b1a1f | gris #6c6c6c */
+
+/* Aplica el modelo de caja border-box a todos los elementos para que padding y border no sumen ancho extra */
+* {
+    box-sizing: border-box;
+}
+
+/* Reduce toda la página al 75%: los tamaños en rem se calculan a partir de este valor, así a 100% de zoom se ve como antes a 75%. */
+html {
+    font-size: 75%;
+    height: 100%;                             /* html mide el 100% de la pantalla; body toma su min-height de este valor */
+}
+
+/* Configuración base del cuerpo de la página */
+body {
+    font-family: "Poppins", Arial, sans-serif; /* Tipografía principal de textos */
+    font-weight: 500;                          /* Poppins Medium en todo el texto del sitio */
+    color: #2b1a1f;                       /* Color de texto predeterminado */
+    background-color: #ffffff;                 /* Fondo blanco general */
+    display: flex;                             /* Body en columna para que el footer quede siempre al final */
+    flex-direction: column;
+    min-height: 100%;                          /* Alto mínimo = 100% del alto de html (la pantalla): así el footer baja al final aunque haya poco contenido */
+}
+
+main {
+    flex: 1;                                   /* El contenido principal ocupa el espacio libre */
+}
+
+/* Contenedor principal con ancho máximo adaptado a pantallas grandes (1440px) */
+.container-xl {
+    max-width: 1080px;
+}
+
+/* ===== NAVBAR (Barra de navegación) ===== */
+.header {
+    background-color: #fff9f6; /* Fondo crema para el encabezado */
+}
+
+.navbar {
+    min-height: 54px; /* Altura mínima de la barra de navegación en celulares */
+}
+
+.logo-img {
+    width: 90px;     /* Ancho del logotipo de la marca */
+    height: auto;     /* Mantiene la proporción de la imagen del logo */
+}
+
+/* Ajuste del logotipo para pantallas menores a 768px (celulares) */
+@media (max-width: 768px) {
+    .logo-img {
+        width: 67.5px;  /* Reduce el ancho del logo en móviles */
+    }
+}
+
+.salud-navlist .nav-link {
+    font-family: "Poppins", Arial, sans-serif; /* Tipografía de los enlaces del menú */
+    font-weight: 500;                           /* Medium */
+    font-size: 1.425rem;                        /* Tamaño de fuente grande para legibilidad en móvil */
+    color: #2b1a1f;                      /* Color del texto de los enlaces */
+    padding: 0.5rem 0.75rem;                  /* Espaciado interno de los enlaces */
+    border-radius: 1rem;                      /* Bordes redondeados para el fondo rosa de la página activa */
+}
+
+.salud-navlist .nav-link:hover {
+    color: #8b0028;                      /* Cambia el color del texto a bordó al pasar el cursor */
+}
+
+.salud-navlist .nav-link.active {
+    background-color: #ffd9e2;            /* Fondo rosa pastel para indicar la página activa actual */
+    color: #8b0028;                      /* Texto bordó para contraste en la página activa */
+}
+
+.navbar-toggler {
+    border: none;                             /* Elimina el borde por defecto del botón hamburguesa */
+    padding: 0.5rem;                          /* Espaciado interno del botón */
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    width: 24px;                              /* Ancho del icono de hamburguesa */
+    height: 24.75px;                             /* Alto del icono de hamburguesa */
+    background-image: url("../../../img/menu_hamburguesa.svg"); /* Ícono propio (carpeta img). Ruta relativa a este CSS */
+}
+
+main {
+    padding-top: 54px;                        /* Espacio superior para evitar que el contenido quede debajo del navbar fijo */
+}
+
+/* Ajustes del menú desplegable para dispositivos móviles (menor a 992px) */
+@media (max-width: 991.98px) {
+    .salud-navlist {
+        padding: 1rem 0;                      /* Espaciado vertical en el menú colapsado */
+    }
+
+    .salud-navlist .nav-link {
+        display: inline-block;                /* Comportamiento en bloque en línea para los enlaces móviles */
+    }
+}
+
+/* ===== HERO (Sección principal de bienvenida / Banner superior) ===== */
+.hero-section {
+    position: relative;                       /* Marca la foto del hero como el "marco" donde se ubica el texto , ayuda a mejorar el posicionamiento del hero para que no se desfase */
+}
+
+/* La foto mantiene su proporción. El margen negativo tapa la franja vacía que traen las imágenes */
+.hero-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: -14%;                      /* Se calcula sobre el ANCHO: ajustar hasta que no se vea la franja gris */
+}
+
+/* La sección siguiente se dibuja encima de la franja que sobra de la foto y la tapa */
+#destacados {
+    background-color: #ffffff;
+}
+
+/* Contenedor del texto del Hero, encima de la foto. Su fondo es la capa oscura que ayuda a leer el texto */
+.hero-content {
+    position: absolute;                       /* Pone el texto ENCIMA de la foto (sin esto se apilaría debajo). Con top/right/bottom/left en 0 cubre toda la foto en cualquier pantalla */
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0, 0, 0, 0.35);    /* Negro con 35% de opacidad */
+    display: flex;
+    align-items: center;                      /* Centra verticalmente el contenido */
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;                                /* Misma separación entre título, línea, subtítulo y botón */
+}
+
+.hero-title {
+    margin: 0;
+}
+
+.hero-divider {
+    width: 64px;
+    height: 3px;
+    background-color: #ffd9e2;
+}
+
+.hero-title-main {
+    display: block;
+    max-width: 420px;                         /* Ancho máximo para que el título no se estire demasiado */
+    font-family: "Inknut Antiqua", serif;      /* Tipografía especial para títulos principales */
+    font-weight: 700;                         /* Negrita fuerte */
+    font-size: 2.25rem;                       /* Tamaño de fuente grande */
+    line-height: 1.05;                        /* Interlineado ajustado */
+    color: #fff9f6;                      /* Color de texto crema claro */
+}
+
+.hero-subtitle {
+    margin: 0;                                /* La separación la da el gap de .hero-text */
+    max-width: 420px;
+    font-size: 1.5rem;                        /* Tamaño de fuente del subtítulo */
+    font-weight: 500;                         /* Medium */
+    color: #fff9f6;                      /* Color crema claro */
+}
+
+.btn-hero {
+    margin-top: 0.5rem;
+    padding: 0.75rem 2rem;                    /* Espaciado interno generoso */
+    background-color: #fff9f6;           /* Fondo crema */
+    color: #2b1a1f;                      /* Texto oscuro */
+    border: 1px solid #fff9f6;           /* Borde del mismo color */
+    font-size: 1.425rem;                        /* Tamaño de texto grande */
+    font-weight: 500;                         /* Medium (Bootstrap pone 400 en los .btn) */
+}
+
+/* Efecto hover y focus para el botón del Hero (inversión de colores) */
+.btn-hero:hover,
+.btn-hero:focus {
+    background-color: #8b0028;           /* Fondo bordó al pasar el mouse */
+    border-color: #8b0028;
+    color: #ffffff;                           /* Texto blanco */
+}
+
+/* Hero en celular */
+@media (max-width: 575.98px) {
+    .hero-text {
+        gap: 0.75rem;
+    }
+
+    .hero-title-main {
+        font-size: 2.1rem;
+        max-width: 100%;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+        max-width: 90%;
+    }
+
+    .btn-hero {
+        margin-top: 0.25rem;
+        padding: 0.6rem 1.5rem;
+        font-size: 1.15rem;
+    }
+}
+
+/* ===== TÍTULOS DE SECCIÓN ===== */
+.seccion {
+    padding: 4rem 0;                          /* Espaciado vertical estándar para separar las secciones */
+}
+
+.titulo-seccion {
+    font-size: 2rem;                          /* Tamaño grande para títulos de sección */
+    font-weight: 500;
+    margin-bottom: 0.25rem;                   /* Espacio reducido debajo del título */
+}
+
+.subtitulo-seccion {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #5c4a4f;                           /* Tono marrón/grisáceo oscuro para subtítulos */
+    margin-bottom: 1.5rem;                    /* Margen inferior para separar del contenido de la grilla */
+}
+
+/* ===== CARDS DE VINOS (Tarjetas de productos) ===== */
+.card-vino {
+    background-color: #f8f4f1;            /* Color de fondo crema/gris suave para la tarjeta */
+    border: none;                             /* Sin bordes predeterminados */
+}
+
+.card-vino .card-img-top {
+    width: 100%;
+    height: auto;                             /* Imagen adaptable sin deformación */
+}
+
+.card-vino .card-title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.card-vino .card-text {
+    font-size: 1.5rem;
+}
+
+.precio {
+    font-family: "Inknut Antiqua", serif;      /* Tipografía con estilo clásico para precios */
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Estilos para el botón de agregar en las tarjetas de vino */
+.btn-salud {
+    background-color: #8b0028;
+    color: #ffffff;
+    border: 1px solid #8b0028;
+    padding: 0.6rem 1rem;
+    font-size: 1.781rem;
+    font-weight: 500;
+}
+
+.btn-salud:hover,
+.btn-salud:focus {
+    background-color: #6d001f;
+    border-color: #6d001f;
+    color: #ffffff;
+}
+
+/* Botones genéricos estilo bordó */
+.btn-bordo {
+    background-color: #8b0028;
+    border: 1px solid #8b0028;
+    color: #ffffff;
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;                         /* Medium */
+}
+
+.btn-bordo:hover {
+    background-color: #6d001f;
+    border-color: #6d001f;
+    color: #ffffff;
+}
+
+/* Botones secundarios con borde oscuro y fondo blanco */
+.btn-borde {
+    background-color: #ffffff;
+    border: 1px solid #111111;
+    color: #111111;
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;                         /* Medium */
+}
+
+.btn-borde:hover {
+    background-color: #111111;
+    color: #ffffff;                           /* Inversión a fondo negro y texto blanco en hover */
+}
+
+/* ===== SERVICIOS ===== */
+.seccion-servicios {
+    background-color: #fff9f6;           /* Fondo crema diferencial para la sección de servicios en la home */
+}
+
+.card-servicio {
+    background-color: #f8f4f1;
+    border: none;
+}
+
+.card-servicio .card-img-top {
+    width: 100%;
+    height: auto;                             /* Mantiene la proporción de las imágenes de servicios */
+}
+
+.card-servicio .card-title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.card-servicio .card-text {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.link-mas-info {
+    font-family: "Inknut Antiqua", serif;
+    font-size: 1.25rem;
+    color: #8b0028;
+    text-decoration: underline;               /* Estilo de enlace subrayado */
+    align-self: flex-start;
+}
+
+.link-mas-info:hover {
+    color: #342026;                           /* Tono más oscuro al pasar el cursor */
+}
+
+/* ===== TESTIMONIOS (Por qué nos eligen) ===== */
+.testimonio-card {
+    height: 100%;                             /* Ocupa todo el alto disponible en la grilla */
+    background-color: #ffffff;
+    border: 2px solid #8b0028;           /* Borde destacado de color bordó */
+    padding: 1.25rem;
+    border-radius: 1rem;
+}
+
+.testimonio-avatar img {
+    width: 60px;                              /* Ancho fijo para la foto de perfil del testimonio */
+    height: 60px;                             /* Alto fijo para mantener la proporción circular */
+}
+
+.testimonio-card h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0.75rem 0 0.25rem;
+}
+
+.stars {
+    color: #8b0028;                      /* Color bordó para las estrellas de calificación */
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.testimonio-card p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* ===== FOOTER (Pie de página) ===== */
+.footer-salud {
+    background-color: #8b0028;           /* Fondo bordó institucional para el footer */
+    color: #ffffff;                           /* Texto blanco */
+    padding: 1.25rem 0;                       /* Espaciado vertical superior e inferior */
+}
+
+.footer-logo {
+    height: 24px;                             /* Altura compacta del logo en el footer */
+    width: auto;
+}
+
+.footer-info p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.footer-social a {
+    margin: 0 0.4rem;                         /* Separación horizontal entre los iconos de redes sociales */
+}
+
+.footer-social img {
+    width: 18px;                              /* Tamaño de los iconos de redes sociales */
+    height: 18px;
+}
+
+/* ===== BANNER BORDÓ (Páginas internas) ===== */
+main.fondo-crema {
+    padding-top: 60px;                        /* Padding superior para compensar el navbar fijo en móvil */
+    background-color: #fff9f6;           /* Fondo general crema para páginas interiores */
+}
+
+@media (min-width: 992px) {
+    main.fondo-crema {
+        padding-top: 105px;                   /* Padding superior mayor en pantallas de escritorio */
+    }
+}
+
+.banner-pagina {
+    background-color: #8b0028;           /* Franja de fondo bordó para los títulos de páginas internas */
+    color: #ffffff;
+    padding: 1rem 0;
+}
+
+.banner-pagina h1 {
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 2.25rem;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.banner-pagina p {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+/* ===== MEDIA QUERIES (Diseño responsivo para Escritorio y pantallas grandes) ===== */
+
+/* Para pantallas medianas y grandes a partir de 992px (Tablets horizontales / Laptops) */
+@media (min-width: 992px) {
+    .navbar {
+        min-height: 105px;                    /* Aumenta la altura del navbar en escritorio */
+    }
+
+    .salud-navlist {
+        gap: 1.5rem;                          /* Mayor separación entre los elementos del menú */
+    }
+
+    main {
+        padding-top: 105px;                   /* Ajuste del espaciado superior del main */
+    }
+
+    /* Baja el texto del hero: el padding-top (en % del ancho) achica la zona donde se centra el texto y lo empuja hacia abajo */
+    .hero-content {
+        padding-top: 15%;
+    }
+
+    .hero-title-main {
+        font-size: 4rem;                      /* Título del Hero mucho más grande en pantallas grandes */
+    }
+
+    .logo-img {
+        width: 105px;                         /* Logo más grande en la barra de navegación */
+    }
+
+    .salud-navlist .nav-link {
+        font-size: 1.188rem;                   /* Tamaño ajustado para los enlaces del menú en desktop */
+    }
+
+    .titulo-seccion {
+        font-size: 2.5rem;                    /* Títulos de sección más destacados */
+    }
+
+    .subtitulo-seccion {
+        font-size: 1.5rem;
+    }
+
+    .card-vino .card-title {
+        font-size: 2rem;
+    }
+
+    .card-vino .card-text {
+        font-size: 1.1rem;
+    }
+
+    .precio {
+        font-size: 1.1rem;
+    }
+
+    .btn-salud {
+        font-size: 1.188rem;
+    }
+}
+
+/* Para pantallas extra grandes a partir de 1200px (Monitores de PC) */
+@media (min-width: 1200px) {
+    .salud-navlist .nav-link {
+        font-size: 1.9rem;                      /* Enlaces del menú grandes en monitores amplios */
+    }
+
+    .hero-title-main {
+        font-size: 5rem;                      /* Máximo tamaño para el título principal del Hero */
+        max-width: 570px;
+    }
+
+    .hero-subtitle {
+        font-size: 2rem;
+        max-width: 570px;
+    }
+
+    .btn-hero {
+        font-size: 1.781rem;
+    }
+
+    .card-vino .card-title {
+        font-size: 2rem;
+    }
+
+    .card-vino .card-text {
+        font-size: 1.5rem;
+    }
+
+    .precio {
+        font-size: 1.5rem;
+    }
+
+    .btn-salud {
+        font-size: 1.781rem;
+    }
+
+    .testimonio-avatar img {
+        width: 84px;                         /* Avatar más grande en pantallas grandes */
+        height: 84px;
+    }
+
+    .stars {
+        font-size: 2.25rem;
+    }
+
+    .footer-salud {
+        padding: 1.75rem 0;                    /* Footer más espacioso en escritorio */
+    }
+
+    .footer-info p {
+        font-size: 1.5rem;
+    }
+
+    .footer-social img {
+        width: 27px;                          /* Iconos de redes sociales más grandes */
+        height: 27px;
+    }
+
+    .footer-social a {
+        margin: 0 0.75rem;
+    }
+}
+
+/* ===== CARRITO (ícono del navbar, en todas las páginas) ===== */
+.link-carrito {
+    display: inline-flex;
+    align-items: flex-start;                  /* El numerito queda arriba, junto al borde superior del ícono */
+    padding: 0.25rem;
+    border: 0;
+    background: transparent;
+    color: #2b1a1f;
+}
+
+.link-carrito:hover {
+    color: #8b0028;
+}
+
+.badge-carrito {
+    margin-top: -7.5px;                       /* Sube el numerito por encima del ícono */
+    margin-left: -7.5px;                      /* Lo mete sobre la esquina derecha del ícono */
+    margin-right: -9px;                       /* Compensa el ancho para que el link no se agrande */
+    min-width: 16.5px;
+    height: 16.5px;
+    padding: 0 3px;
+    border-radius: 50rem; 
+    background-color: #8b0028;
+    color: #ffffff;
+    font-size: 0.8rem;
+    line-height: 16.5px;
+    text-align: center;
+}
+
+/* ===== CARRUSEL DE OPINIONES (flechas) ===== */
+.opiniones-controles {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.flecha-opiniones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #8b0028;
+    border-radius: 50%;                       /* Botón redondo */
+    background-color: #ffffff;
+    color: #8b0028;
+}
+
+.flecha-opiniones:hover,
+.flecha-opiniones:focus {
+    background-color: #ffd9e2;                /* Rosa de la marca al pasar el cursor */
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Salud!</title>
+
+    <!-- Tipografías de la guía: Poppins (textos) e Inknut Antiqua (títulos y detalles) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inknut+Antiqua:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap (archivo local) -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+     <!-- Mi CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/styles.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/contacto.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+
+                <!-- Logo del navbar: lleva al inicio. Para cambiar el logo, reemplazar img/logo_salud!.png (el tamaño se ajusta en .logo-img de styles.css) -->
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/logo_salud!.png" alt="Salud!" class="logo-img">
+                </a>
+
+                <!-- Carrito + hamburguesa (en desktop queda solo el carrito, a la derecha) -->
+                <div class="d-flex align-items-center gap-2 order-lg-3 ms-auto ms-lg-3">
+                    <!-- Lleva a Productos, donde está el carrito de compras -->
+                    <a class="link-carrito" href="productos.html" aria-label="Ir al carrito de compras">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-end order-lg-2" id="mainNav">
+                    <!-- Links del menú. La clase "active" (fondo rosa) marca la página actual -->
+                    <ul class="navbar-nav align-items-lg-center salud-navlist">
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quienes-somos.html">Quiénes somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contacto.html" aria-current="page">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">Faq</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="fondo-crema">
+
+        <!-- ================= CONTACTO ================= -->
+        <section class="seccion seccion-contacto contacto-pagina">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+
+                <h1 class="titulo-seccion">Contacto</h1>
+                <p class="subtitulo-seccion">Para cualquier consulta, escribinos.</p>
+
+                <!-- Dos columnas desde 768px (formulario | datos y mapa); en celular se apilan. Estilos en contacto.css -->
+                <div class="row g-4 g-lg-5">
+
+                    <!-- Columna izquierda: formulario -->
+                    <div class="col-md-6 d-flex flex-column">
+                        <!-- Formulario: por ahora "action" abre el programa de mail con el destinatario indicado. Para cambiar el mail de destino, editar el mailto: (y el mail que se muestra en "Email:" más abajo). El "(*)" marca campos obligatorios (required) -->
+                        <form action="mailto:contacto@salud!.com" method="post" enctype="text/plain" id="formContacto" class="d-flex flex-column flex-grow-1">
+
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre (*)</label>
+                                <input type="text" class="form-control form-control-lg" id="nombre" name="nombre"
+                                    placeholder="Completá tu nombre" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email (*)</label>
+                                <input type="email" class="form-control form-control-lg" id="email" name="email"
+                                    placeholder="Completá tu email" required>
+                            </div>
+
+                            <div class="mb-2">
+                                <label for="mensaje" class="form-label">Mensaje (*)</label>
+                                <!-- rows="7" = alto del cuadro de mensaje. maxlength="500" = límite de caracteres (si se cambia, actualizar también el texto "Máxima cantidad de caracteres 500." de abajo) -->
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="7" maxlength="500"
+                                    placeholder="Dejanos tu mensaje" required></textarea>
+                            </div>
+
+                            <p class="contador mb-3">Máxima cantidad de caracteres 500.</p>
+
+                            <!-- Botones: "Enviar consulta" envía el formulario y "Borrar" (type="reset") limpia todos los campos -->
+                            <div class="d-flex gap-3 mt-auto">
+                                <button type="submit" class="btn btn-bordo flex-fill">Enviar consulta</button>
+                                <button type="reset" class="btn btn-borde flex-fill">Borrar</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!-- Columna derecha: datos y mapa -->
+                    <div class="col-md-6 d-flex flex-column">
+
+                        <!-- Datos del local (si cambian, actualizar también el mapa y el link "Cómo llegar" de más abajo, y el horario en faq.html) -->
+                        <p class="dato"><strong>Dirección:</strong> Av. Los Incas 3120, CABA</p>
+                        <p class="dato"><strong>Horarios:</strong> martes a domingos de 17 a 00 hs</p>
+                        <p class="dato"><strong>Teléfono:</strong> 011 5553 8741</p>
+                        <p class="dato"><strong>Email:</strong> contacto@salud!.com</p>
+
+                        <!-- Mapa de Google: la dirección va en "q=" dentro del src del iframe. El marco y el alto se editan en .mapa de contacto.css -->
+                        <div class="mapa mb-4">
+                            <iframe
+                                src="https://www.google.com/maps?q=Av.+Los+Incas+3120,+CABA&output=embed"
+                                title="Google Maps: ubicación del local"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                allowfullscreen></iframe>
+                        </div>
+
+                        <!-- Botón "Cómo llegar": abre Google Maps con la ruta hacia la dirección (parámetro "destination=") -->
+                        <div class="text-center">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Los+Incas+3120,+CABA"
+                                target="_blank" rel="noopener" class="btn btn-bordo">Cómo llegar</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-salud">
+        <div class="container-xl px-3 px-md-4 px-lg-5">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-center">
+
+                <!-- Logo del footer (versión SVG, tamaño en .footer-logo de styles.css) -->
+                <a aria-label="Inicio" href="index.html" class="footer-brand">
+                    <img src="img/Salud!.svg" alt="Salud!" class="footer-logo">
+                </a>
+
+                <!-- Créditos del sitio (texto del medio) -->
+                <div class="footer-info">
+                    <p>Diseñado por Martín Singer y Laura Reinich</p>
+                    <p>Diseño Gráfico Digital . ORT . 2026</p>
+                </div>
+
+                <!-- Íconos de redes sociales: para cambiar a dónde llevan, editar el href de cada link (abren en pestaña nueva) -->
+                <div class="footer-social d-flex justify-content-center gap-3">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="img/icono_instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="img/icono_youtube.svg" alt="YouTube"></a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="img/icono_linkedin.svg" alt="LinkedIn"></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts al final del body -->
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

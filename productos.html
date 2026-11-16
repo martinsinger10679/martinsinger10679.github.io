@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Salud!</title>
+
+    <!-- Tipografías de la guía: Poppins (textos) e Inknut Antiqua (títulos y detalles) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inknut+Antiqua:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.8 (archivo local) -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <!-- Mi CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/styles.css">
+<link rel="stylesheet" href="assets/bootstrap/css/productos.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+
+                <!-- Logo del navbar: lleva al inicio. Para cambiar el logo, reemplazar img/logo_salud!.png (el tamaño se ajusta en .logo-img de styles.css) -->
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/logo_salud!.png" alt="Salud!" class="logo-img">
+                </a>
+
+                <!-- Carrito + hamburguesa (en desktop queda solo el carrito, a la derecha) -->
+                <div class="d-flex align-items-center gap-2 order-lg-3 ms-auto ms-lg-3">
+                    <!-- Abre el panel del carrito (offcanvas de Bootstrap 5) -->
+                    <button class="link-carrito" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#carritoPanel" aria-controls="carritoPanel" aria-label="Abrir carrito de compras">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
+                        <!-- Numerito rojo sobre el carrito: lo actualiza el JS con la cantidad de unidades (estilo en .badge-carrito de styles.css) -->
+                        <span class="badge-carrito" id="contador-carrito">0</span>
+                    </button>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-end order-lg-2" id="mainNav">
+                    <!-- Links del menú. La clase "active" (fondo rosa) marca la página actual -->
+                    <ul class="navbar-nav align-items-lg-center salud-navlist">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="productos.html" aria-current="page">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quienes-somos.html">Quiénes somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">Faq</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="fondo-crema">
+
+        <!-- ================= BANNER DE LA PÁGINA ================= -->
+        <section class="banner-pagina">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+                <h1>Productos</h1>
+                <p>Elegí tu vino favorito</p>
+            </div>
+        </section>
+
+        <!-- ================= CATÁLOGO ================= -->
+        <section class="productos-pagina">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+
+                <!-- Desplegable de tipo de vino (dropdown de Bootstrap) -->
+                <div class="filtro-productos">
+                    <p class="filtro-label" id="filtro-titulo">Tipos de vinos</p>
+
+                    <div class="dropdown filtro-dropdown">
+                        <button class="filtro-boton dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            data-bs-display="static" aria-expanded="false"
+                            aria-labelledby="filtro-titulo filtro-texto">
+                            <span id="filtro-texto">Todos</span>
+                        </button>
+
+                        <!-- Opciones del filtro: data-valor es lo que lee el JS para filtrar (todos / tinto / blanco / rosado) y debe coincidir con el tipo de cada producto en productos.js -->
+                        <ul class="dropdown-menu filtro-menu">
+                            <li><button class="dropdown-item" type="button" data-valor="todos">Todos</button></li>
+                            <li><button class="dropdown-item" type="button" data-valor="tinto">Tintos</button></li>
+                            <li><button class="dropdown-item" type="button" data-valor="blanco">Blancos</button></li>
+                            <li><button class="dropdown-item" type="button" data-valor="rosado">Rosados</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Las cards se dibujan con jQuery desde el array "productos" (productos.js) -->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3" id="lista-productos"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= PANEL DEL CARRITO (offcanvas de Bootstrap 5) ================= -->
+    <div class="offcanvas offcanvas-end carrito-panel" tabindex="-1" id="carritoPanel"
+        aria-labelledby="carritoTitulo">
+
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="carritoTitulo">Tu carrito</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+        </div>
+
+        <div class="offcanvas-body d-flex flex-column">
+
+            <!-- Carrito con productos -->
+            <form id="carrito-form" class="d-flex flex-column flex-grow-1" action="#" method="post">
+                <div id="carrito-contenido" class="d-flex flex-column flex-grow-1">
+
+                    <!-- Lista de productos (se completa con jQuery) -->
+                    <!-- Los ids sc-cart-* los usa scripts.js: si se cambian acá, hay que cambiarlos también en el JS -->
+                    <div class="sc-cart-item-list list-group list-group-flush flex-grow-1" id="sc-cart-item-list"></div>
+
+                    <!-- Resumen -->
+                    <div class="sc-cart-summary">
+                        <p class="sc-cart-unidades">Unidades: <span id="sc-cart-unidades">0</span></p>
+                        <p class="sc-cart-subtotal">Subtotal: <strong id="sc-cart-subtotal">$0</strong></p>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="sc-cart-toolbar">
+                        <button type="button" id="sc-cart-vaciar" class="btn btn-borde" disabled>Vaciar carrito</button>
+                        <button type="submit" id="sc-cart-finalizar" class="btn btn-bordo" disabled>Finalizar compra</button>
+                    </div>
+                </div>
+
+                <!-- Confirmación de la compra -->
+                <div id="carrito-confirmacion" class="carrito-confirmacion d-none" role="status">
+                    <h3>¡Gracias por tu compra!</h3>
+                    <p>Registramos tu pedido de <strong id="sc-cart-unidades-compra">0</strong> unidades:</p>
+                    <ul id="sc-cart-resumen-compra"></ul>
+                    <p class="carrito-total">Total: <strong id="sc-cart-total-compra">$0</strong></p>
+                    <p>Te confirmamos el pedido por mail.</p>
+                    <button type="button" id="sc-cart-seguir" class="btn btn-bordo w-100">Seguir comprando</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-salud">
+        <div class="container-xl px-3 px-md-4 px-lg-5">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-center">
+
+                <!-- Logo del footer (versión SVG, tamaño en .footer-logo de styles.css) -->
+                <a aria-label="Inicio" href="index.html" class="footer-brand">
+                    <img src="img/Salud!.svg" alt="Salud!" class="footer-logo">
+                </a>
+
+                <!-- Créditos del sitio (texto del medio) -->
+                <div class="footer-info">
+                    <p>Diseñado por Martín Singer y Laura Reinich</p>
+                    <p>Diseño Gráfico Digital . ORT . 2026</p>
+                </div>
+
+                <div class="footer-social d-flex justify-content-center gap-3">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="img/icono_instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="img/icono_youtube.svg" alt="YouTube"></a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="img/icono_linkedin.svg" alt="LinkedIn"></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts al final del body, el orden es importante -->
+    <script src="assets/jquery/jquery-3.7.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/bootstrap/js/productos.js"></script>
+    <script src="assets/bootstrap/js/scripts.js"></script>
+
+</body>
+
+</html>

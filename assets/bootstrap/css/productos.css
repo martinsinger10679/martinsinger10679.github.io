@@ -1,0 +1,285 @@
+/* =========================================================
+   productos.css
+   ========================================================= */
+
+/* ===== SECCIÓN DEL CATÁLOGO (espacio arriba y abajo de la página) ===== */
+.productos-pagina {
+    padding: 2rem 0 5rem;                     /* Arriba / costados / abajo en celular. Subir el 3er valor = más aire antes del footer */
+}
+
+@media (min-width: 992px) {
+    .productos-pagina {
+        padding: 3rem 0 6rem;                 /* Mismo espaciado, pero para desktop */
+    }
+}
+
+/* ===== FILTRO "TIPOS DE VINOS" (desplegable) ===== */
+.filtro-productos {
+    margin-bottom: 2.5rem;                    /* Separación entre el filtro y las cards de productos */
+}
+
+/* Texto "Tipos de vinos" que va arriba del desplegable */
+.filtro-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Caja contenedora del desplegable: limita su ancho */
+.filtro-dropdown {
+    max-width: 300px;                         /* Cambiar para hacer el desplegable más ancho o más angosto */
+}
+
+/* Botón cerrado del desplegable (el que muestra "Todos", "Tintos", etc.) */
+.filtro-dropdown .filtro-boton {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid #8b0028;                /* Borde bordó */
+    background-color: #ffffff;
+    color: #2b1a1f;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* Flechita del desplegable: se reemplaza la de Bootstrap por un SVG propio (color bordó %238b0028) */
+.filtro-dropdown .filtro-boton::after {
+    width: 13.5px;
+    height: 13.5px;
+    margin-left: auto;                        /* Manda la flecha al extremo derecho */
+    border: 0;
+    vertical-align: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%238b0028' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 5l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Con el menú abierto la flecha NO gira (Bootstrap la gira por defecto) */
+.filtro-dropdown .filtro-boton.show::after {
+    transform: none;
+}
+
+/* Con el menú abierto se saca el borde de abajo para que el botón y la lista se vean como una sola caja */
+.filtro-dropdown .filtro-boton.show {
+    border-bottom: 0;
+}
+
+/* Lista de opciones que se despliega (Todos / Tintos / Blancos / Rosados) */
+.filtro-dropdown .filtro-menu {
+    width: 100%;
+    min-width: 100%;                          /* Misma anchura que el botón */
+    padding: 0.25rem 0 0.5rem;
+    border: 1px solid #8b0028;
+    border-top: 0;                            /* Sin borde arriba: continúa el del botón */
+    background-color: #ffffff;
+}
+
+/* Cada opción de la lista */
+.filtro-menu .dropdown-item {
+    padding: 0.5rem 1.5rem;
+    color: #2b1a1f;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Opción resaltada: al pasar el mouse, al enfocarla con teclado o la que está seleccionada */
+.filtro-menu .dropdown-item:hover,
+.filtro-menu .dropdown-item:focus,
+.filtro-menu .dropdown-item.active {
+    background-color: #ffd9e2;                /* Rosa de la marca */
+    color: #8b0028;
+}
+
+/* Desktop grande: el título "Tipos de vinos" crece */
+@media (min-width: 1200px) {
+    .filtro-label {
+        font-size: 2rem;
+    }
+}
+
+/* ===== BOTÓN "QUITAR" DE LAS CARDS (fondo blanco, borde bordó) =====
+   Se usa cuando el producto ya está en el carrito (lo maneja productos.js / scripts.js) */
+.btn-quitar,
+.btn-salud.btn-quitar {
+    background-color: #ffffff;
+    color: #8b0028;
+    border: 1px solid #8b0028;
+}
+
+.btn-quitar:hover,
+.btn-quitar:focus,
+.btn-salud.btn-quitar:hover,
+.btn-salud.btn-quitar:focus {
+    background-color: #ffd9e2;                /* Rosa al pasar el mouse */
+    border-color: #8b0028;
+    color: #8b0028;
+}
+
+/* Producto ya agregado al carrito: borde bordó y fondo rosado */
+.sc-added-item {
+    border: 2px solid #8b0028;
+    background-color: #ffd9e2;
+}
+
+/* ===== PANEL DEL CARRITO (offcanvas que se desliza desde la derecha) ===== */
+.carrito-panel {
+    background-color: #fff9f6;                /* Fondo crema */
+    width: 330px;                             /* Ancho del panel: cambiar acá para hacerlo más ancho o angosto */
+    max-width: 100%;                          /* En pantallas muy chicas no se pasa del ancho de la pantalla */
+}
+
+/* Cabecera del panel (título + botón de cerrar) */
+.carrito-panel .offcanvas-header {
+    border-bottom: 1px solid rgba(43, 26, 31, 0.15);   /* Línea fina separadora */
+}
+
+/* Título "Tu carrito" */
+.carrito-panel .offcanvas-title {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* Contenedor de la lista de productos del carrito (se llena con jQuery) */
+.sc-cart-item-list {
+    min-height: 37.5px;                       /* Alto mínimo para que no colapse cuando está vacío */
+}
+
+/* Mensaje "Tu carrito está vacío" */
+.sc-cart-empty-msg {
+    margin: 0;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #6c6c6c;
+    font-size: 1.25rem;
+}
+
+/* Cada fila de producto dentro del carrito */
+.sc-cart-item {
+    padding-right: 0;
+    background-color: transparent;
+    border-color: rgba(43, 26, 31, 0.15);     /* Línea fina entre productos */
+}
+
+/* Foto miniatura del producto en el carrito */
+.sc-cart-item img {
+    width: 54px;
+    height: 54px;
+}
+
+/* Bloque de texto de la fila (nombre, precio, cantidad) */
+.sc-cart-item-info {
+    flex: 1;                                  /* Ocupa todo el espacio entre la foto y el botón de quitar */
+    min-width: 0;                             /* Permite que el texto largo se corte en vez de desbordar */
+}
+
+/* Nombre del vino en el carrito */
+.sc-cart-item-name {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+/* Precio unitario en gris */
+.sc-cart-item-price {
+    margin: 0.15rem 0 0.4rem;
+    font-size: 1.05rem;
+    color: #6c6c6c;
+}
+
+/* Selector de cantidad (el desplegable numérico) */
+.sc-cart-item-qty {
+    width: 57px;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid #111111;
+    background-color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Total de esa fila (precio x cantidad), alineado a la derecha */
+.sc-cart-item-summary {
+    margin: 0.4rem 0 0;
+    text-align: right;
+    font-family: "Inknut Antiqua", serif;
+    font-size: 1.05rem;
+}
+
+/* Botón de quitar: es un elemento más de la fila (queda a la derecha) y se alinea arriba */
+.sc-cart-remove {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+/* ===== RESUMEN DEL CARRITO (unidades y subtotal) ===== */
+.sc-cart-summary {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    text-align: right;
+}
+
+.sc-cart-summary p {
+    margin: 0;
+}
+
+/* Línea "Unidades: X" */
+.sc-cart-unidades {
+    font-size: 1.15rem;
+    color: #6c6c6c;
+}
+
+/* Línea "Subtotal: $X" */
+.sc-cart-subtotal {
+    font-size: 1.6rem;
+}
+
+/* El monto del subtotal con la tipografía de precios */
+.sc-cart-subtotal strong {
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 600;
+}
+
+/* ===== BOTONES DEL CARRITO ("Vaciar carrito" y "Finalizar compra") ===== */
+.sc-cart-toolbar {
+    display: flex;
+    gap: 0.75rem;                             /* Separación entre los dos botones */
+    margin-top: 1rem;
+}
+
+.sc-cart-toolbar .btn {
+    flex: 1;                                  /* Los dos botones miden lo mismo */
+    font-size: 1.188rem;
+}
+
+/* Botones deshabilitados (carrito vacío): se ven opacos */
+.sc-cart-toolbar .btn:disabled {
+    opacity: 0.5;
+}
+
+/* ===== PANTALLA DE CONFIRMACIÓN ("¡Gracias por tu compra!") ===== */
+.carrito-confirmacion h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.carrito-confirmacion p,
+.carrito-confirmacion li {
+    font-size: 1.25rem;
+}
+
+/* Lista con el detalle de lo comprado */
+.carrito-confirmacion ul {
+    padding-left: 1.25rem;
+}
+
+/* Línea "Total: $X" */
+.carrito-total {
+    font-size: 1.5rem;
+}
+
+/* Botón "Seguir comprando" */
+.carrito-confirmacion .btn {
+    font-size: 1.188rem;
+}

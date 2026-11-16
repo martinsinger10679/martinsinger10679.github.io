@@ -1,0 +1,159 @@
+/* =========================================================
+   contacto.css
+   ========================================================= */
+
+/* Fondo crema de toda la sección de contacto */
+.seccion-contacto {
+    background-color: #fff9f6;
+}
+
+/* ===== FORMULARIO ===== */
+
+/* Etiquetas de los campos ("Nombre (*)", "Email (*)", "Mensaje (*)") */
+.seccion-contacto .form-label {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Campos de texto (nombre, email y mensaje) */
+.seccion-contacto .form-control {
+    padding: 1rem 1.25rem;
+    border: 1px solid #111111;
+    background-color: #ffffff;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Texto de ayuda gris dentro del campo vacío (placeholder) */
+.seccion-contacto .form-control::placeholder {
+    color: #8a8a8a;
+}
+
+/* Campo seleccionado: el borde pasa a bordó */
+.seccion-contacto .form-control:focus {
+    border-color: #8b0028;
+}
+
+/* Campo con error (lo marca la validación): borde bordó más grueso */
+.seccion-contacto .form-control.is-invalid {
+    border-color: #8b0028;
+    border-width: 2px;
+}
+
+/* Campo correcto: vuelve al borde negro normal */
+.seccion-contacto .form-control.is-valid {
+    border-color: #111111;
+}
+
+/* Mensaje de error que aparece debajo del campo */
+.seccion-contacto .invalid-feedback {
+    margin-top: 0.35rem;
+    color: #8b0028;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+/* Texto "Máxima cantidad de caracteres 500." debajo del mensaje */
+.contador {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 1.25rem;
+    color: #6c6c6c;
+}
+
+/* Tamaño del texto de los botones "Enviar consulta" y "Borrar" en celular */
+.seccion-contacto .btn-bordo,
+.seccion-contacto .btn-borde {
+    font-size: 1.188rem;
+}
+
+/* Botón de enviar deshabilitado (mientras se envía): se ve un poco opaco */
+.seccion-contacto .btn-bordo:disabled {
+    opacity: 0.7;
+}
+
+/* Cartel de éxito que aparece después de enviar el formulario */
+.contacto-exito {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid #8b0028;
+    background-color: #ffd9e2;
+    color: #8b0028;
+    font-size: 1.25rem;
+    line-height: 1.35;
+}
+
+/* ===== COLUMNA DERECHA: DATOS DEL LOCAL ===== */
+
+/* Cada línea (Dirección, Horarios, Teléfono, Email) */
+.dato {
+    font-size: 1.25rem;
+    margin-bottom: 10.5px;
+}
+
+/* La palabra en negrita de cada línea ("Dirección:", "Horarios:", etc.) */
+.dato strong {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-right: 3px;
+}
+
+/* ===== MAPA ===== */
+.mapa {
+    display: flex;                 /* El iframe se estira para llenar todo el alto del mapa */
+    flex: 1;                       /* El mapa ocupa el espacio libre y empuja el botón 'Cómo llegar' al final de la columna */
+    min-height: 187.5px;           /* Alto mínimo del mapa (en celular) */
+    border: 2px solid #8b0028;
+    background-color: #ffd9e2;
+    
+}
+
+/* El mapa de Google (iframe) */
+.mapa iframe {
+    display: block;
+    flex: 1;
+    width: 100%;
+    border: 0;
+    opacity: 0.75;                 /* deja ver el rosado de atrás */
+}
+
+/* ===== ESPACIADO GENERAL DE LA PÁGINA ===== */
+.contacto-pagina {
+    padding: 2rem 0 4rem;                     /* Espacio arriba y abajo en celular */
+}
+
+/* Desktop: más espacio y botones más grandes */
+@media (min-width: 992px) {
+    .contacto-pagina {
+        padding: 4rem 0 6rem;
+    }
+
+    .seccion-contacto .btn-bordo,
+    .seccion-contacto .btn-borde {
+        font-size: 1.425rem;
+    }
+}
+
+/* Celulares chicos (menos de 576px): letras del formulario y de los datos un poco más chicas */
+@media (max-width: 575.98px) {
+    .seccion-contacto .form-label,
+    .seccion-contacto .form-control {
+        font-size: 1.25rem;
+    }
+
+    .dato strong {
+        font-size: 1.5rem;
+    }
+}
+
+/* Monitores grandes (1200px o más): datos y botones más grandes */
+@media (min-width: 1200px) {
+    .dato strong {
+        font-size: 2rem;
+    }
+
+    .seccion-contacto .btn-bordo,
+    .seccion-contacto .btn-borde {
+        font-size: 1.781rem;
+    }
+}

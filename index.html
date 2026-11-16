@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud! | Vinos argentinos</title>
+
+    <!-- Tipografías de la guía: Poppins (textos) e Inknut Antiqua (títulos y detalles) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inknut+Antiqua:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap (archivo local) -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <!-- Mi CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/styles.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+
+                <!-- Logo del navbar: lleva al inicio. Para cambiar el logo, reemplazar img/logo_salud!.png (el tamaño se ajusta en .logo-img de styles.css) -->
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/logo_salud!.png" alt="Salud!" class="logo-img">
+                </a>
+
+                <!-- Carrito + hamburguesa (en desktop queda solo el carrito, a la derecha) -->
+                <div class="d-flex align-items-center gap-2 order-lg-3 ms-auto ms-lg-3">
+                    <!-- Lleva a Productos, donde está el carrito de compras -->
+                    <a class="link-carrito" href="productos.html" aria-label="Ir al carrito de compras">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-end order-lg-2" id="mainNav">
+                    <!-- Links del menú. La clase "active" (fondo rosa) marca la página actual: al copiar este menú a otra página, mover "active" y aria-current al link correspondiente -->
+                    <ul class="navbar-nav align-items-lg-center salud-navlist">
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quienes-somos.html">Quiénes somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">Faq</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+        <section id="hero" class="hero-section">
+            <!-- Carrusel de fondo del hero (3 fotos que cambian solas cada 5 segundos: data-bs-interval="5000" en milisegundos).
+                 La foto con la clase "active" es la que se muestra primero. Para agregar una foto, copiar un bloque "carousel-item" -->
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel"
+                data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="img/vinos_para_cada_momento1.png" class="d-block w-100 hero-img" alt="Mesa con vinos">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="img/vinos_para_cada_momento2.png" class="d-block w-100 hero-img" alt="Botellas y copas">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/vinos_para_cada_momento3.png" class="d-block w-100 hero-img" alt="Selección de vinos">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido del hero: .hero-content ocupa todo el ancho (capa oscura) y el texto va dentro del contenedor -->
+            <div class="hero-content">
+                <div class="container-xl px-3 px-md-4 px-lg-5">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="hero-title-main">Vinos para cada momento</span>
+                        </h1>
+                        <div class="hero-divider"></div>
+                        <h2 class="hero-subtitle">Descubrí nuestra selección de vinos argentinos y
+                            encontrá el ideal para brindar.</h2>
+                        <a class="btn btn-hero" href="productos.html">Quiero probarlos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= NUESTROS DESTACADOS ================= -->
+        <section id="destacados" class="seccion">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+
+                <h2 class="titulo-seccion">Nuestros Destacados</h2>
+                <p class="subtitulo-seccion">Elegí tu vino favorito.</p>
+
+                <!-- Grilla de cards: 1 columna en celular, 2 en tablet chica, 4 en desktop (row-cols-*). "g-3" es la separación entre cards.
+                     Cada card tiene: foto, nombre (card-title), descripción (card-text), precio y botón "Ver más" que lleva a Productos -->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+
+                    <!-- Card 1 -->
+                    <div class="col">
+                        <article class="card card-vino h-100">
+                            <div class="position-relative">
+                                <img src="img/productos_malbec_reserva.png" class="card-img-top" alt="Botella y copa de Malbec Reserva">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Malbec Reserva</h3>
+                                <p class="card-text">Tinto. Cuerpo intenso, notas a frutos rojos.</p>
+                                <p class="precio mt-auto">$14.500</p>
+                                <a href="productos.html" class="btn btn-salud w-100 text-center text-decoration-none">Ver más</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <article class="card card-vino h-100">
+                            <div class="position-relative">
+                                <img src="img/productos_cabernet_sauvignon.png" class="card-img-top" alt="Botella y copa de Cabernet Sauvignon">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Cabernet Sauvignon</h3>
+                                <p class="card-text">Tinto. Taninos firmes, final largo.</p>
+                                <p class="precio mt-auto">$13.800</p>
+                                <a href="productos.html" class="btn btn-salud w-100 text-center text-decoration-none">Ver más</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col">
+                        <article class="card card-vino h-100">
+                            <div class="position-relative">
+                                <img src="img/productos_chardonay_blanco.png" class="card-img-top" alt="Botella y copa de Chardonnay">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Chardonnay</h3>
+                                <p class="card-text">Blanco. Fresco, cítrico y frutal.</p>
+                                <p class="precio mt-auto">$14.000</p>
+                                <a href="productos.html" class="btn btn-salud w-100 text-center text-decoration-none">Ver más</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col">
+                        <article class="card card-vino h-100">
+                            <div class="position-relative">
+                                <img src="img/productos_torrontes.png" class="card-img-top" alt="Botella y copa de Torrontés">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Torrontés</h3>
+                                <p class="card-text">Blanco. Aromático, floral y suave.</p>
+                                <p class="precio mt-auto">$14.200</p>
+                                <a href="productos.html" class="btn btn-salud w-100 text-center text-decoration-none">Ver más</a>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SERVICIOS ================= -->
+        <section id="servicios" class="seccion seccion-servicios">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+
+                <h2 class="titulo-seccion">Servicios</h2>
+                <p class="subtitulo-seccion">Más formas de disfrutar el vino.</p>
+
+                <!-- Grilla de servicios: 1 columna en celular y 3 en desktop. Cada card termina con un link "Más info" a servicios.html -->
+                <div class="row row-cols-1 row-cols-lg-3 g-4">
+
+                    <!-- Servicio 1 -->
+                    <div class="col">
+                        <article class="card card-servicio h-100">
+                            <img src="img/servicios_cata.png" class="card-img-top" alt="Copas de vino tinto, blanco y rosado">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Catas y degustaciones</h3>
+                                <p class="card-text">Reservá una cata guiada y conocé nuestros vinos.</p>
+                                <a class="link-mas-info mt-auto" href="servicios.html">Más info</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="col">
+                        <article class="card card-servicio h-100">
+                            <img src="img/servicios_envios.png" class="card-img-top" alt="Tabla de quesos y fiambres con una copa de vino">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Envíos a domicilio</h3>
+                                <p class="card-text">Pedí desde tu casa y recibí tus vinos donde estés.</p>
+                                <a class="link-mas-info mt-auto" href="servicios.html">Más info</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="col">
+                        <article class="card card-servicio h-100">
+                            <img src="img/servicios_cajas.png" class="card-img-top" alt="Caja de regalo junto a una botella y dos copas">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Cajas y regalos</h3>
+                                <p class="card-text">Armá tu caja o un regalo para una ocasión especial.</p>
+                                <a class="link-mas-info mt-auto" href="servicios.html">Más info</a>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= POR QUÉ NOS ELIGEN ================= -->
+        <section id="opiniones" class="seccion">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+
+                <h2 class="titulo-seccion">Por qué nos eligen</h2>
+                <p class="subtitulo-seccion">Más formas de disfrutar el vino.</p>
+
+                <!-- Carrusel de Bootstrap 5: cada diapositiva muestra 3 opiniones (sin autoplay, se pasa con las flechas) -->
+                <div id="opinionesCarousel" class="carousel slide">
+                    <div class="carousel-inner">
+
+                        <!-- Diapositiva 1 -->
+                        <div class="carousel-item active">
+                            <div class="row row-cols-1 row-cols-lg-3 g-4">
+                            <div class="col">
+                                <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_magali.png" alt="Magalí Suoto">
+                                    </div>
+                                    <h3>Magalí Suoto</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“Excelente selección y atención. El Malbec llegó perfecto y bien embalado”.</p>
+                                </article>
+                            </div>
+                            <div class="col">
+                                <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_lucio.png" alt="Lucio Costa">
+                                    </div>
+                                    <h3>Lucio Costa</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“Muy buena variedad de vinos y precios claros. Lo recomiendo”.</p>
+                                </article>
+                            </div>
+                            <div class="col">
+                                <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_camila.png" alt="Camila Sere">
+                                    </div>
+                                    <h3>Camila Sere</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“Las catas son una gran experiencia. Volvería sin dudarlo”.</p>
+                                </article>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- Diapositiva 2 -->
+                        <div class="carousel-item">
+                            <div class="row row-cols-1 row-cols-lg-3 g-4">
+                            <div class="col">
+                                <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_sofia.png" alt="Sofía Ramírez">
+                                    </div>
+                                    <h3>Sofía Ramírez</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“Compré una caja de regalo para mi papá y fue un acierto total. Muy bien presentada”.</p>
+                                </article>
+                            </div>
+                            <div class="col">
+                                <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_federico.png" alt="Federico Paz">
+                                    </div>
+                                    <h3>Federico Paz</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“Me asesoraron para elegir un vino para una cena y salió todo perfecto”.</p>
+                                </article>
+                            </div>
+                            <div class="col">
+                                <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_valentina.png" alt="Valentina Gómez">
+                                    </div>
+                                    <h3>Valentina Gómez</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“El Torrontés es mi nuevo favorito. Comprar desde la web fue muy fácil”.</p>
+                                </article>
+                            </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Flechas -->
+                    <div class="opiniones-controles">
+                        <button class="flecha-opiniones" type="button" data-bs-target="#opinionesCarousel" data-bs-slide="prev" aria-label="Opiniones anteriores">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2L4 8l6 6"/></svg>
+                        </button>
+                        <button class="flecha-opiniones" type="button" data-bs-target="#opinionesCarousel" data-bs-slide="next" aria-label="Opiniones siguientes">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2l6 6-6 6"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-salud">
+        <div class="container-xl px-3 px-md-4 px-lg-5">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-center">
+
+                <!-- Logo del footer (versión SVG, tamaño en .footer-logo de styles.css) -->
+                <a aria-label="Inicio" href="index.html" class="footer-brand">
+                    <img src="img/Salud!.svg" alt="Salud!" class="footer-logo">
+                </a>
+
+                <!-- Créditos del sitio (texto del medio) -->
+                <div class="footer-info">
+                    <p>Diseñado por Martín Singer y Laura Reinich</p>
+                    <p>Diseño Gráfico Digital . ORT . 2026</p>
+                </div>
+
+                <!-- Íconos de redes sociales: para cambiar a dónde llevan, editar el href de cada link (abren en pestaña nueva) -->
+                <div class="footer-social d-flex justify-content-center gap-3">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="img/icono_instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="img/icono_youtube.svg" alt="YouTube"></a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="img/icono_linkedin.svg" alt="LinkedIn"></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts al final del body -->
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

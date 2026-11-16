@@ -1,0 +1,163 @@
+/* =========================================================
+   quienes-somos.css
+   ========================================================= */
+
+/* ===== SECCIÓN "NUESTRA HISTORIA" (video + texto) ===== */
+.quienes-pagina {
+    padding: 3rem 0 4rem;                     /* Espacio arriba y abajo en celular */
+}
+
+@media (min-width: 992px) {
+    .quienes-pagina {
+        padding: 6rem 0 7rem;                 /* Más aire en desktop */
+    }
+}
+
+/* El video se adapta al ancho de su columna y mantiene su proporción */
+.video-quienes video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Párrafos de la historia (columna derecha) */
+.texto-quienes p {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5;                         /* Interlineado */
+}
+
+/* En desktop el texto es más grande para llenar el alto del video sin dejar huecos entre párrafos */
+@media (min-width: 992px) {
+    .texto-quienes p {
+        font-size: 1.75rem;
+        line-height: 1.6;
+    }
+}
+
+/* Mismo tamaño que los botones de Contacto (.btn-bordo): consistente en todo el sitio */
+.btn-quienes {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.5rem;
+    font-size: 1.188rem;
+    font-weight: 500;
+}
+
+/* El tamaño del botón "Ver nuestros vinos" crece en cada breakpoint */
+@media (min-width: 992px) {
+    .btn-quienes { font-size: 1.425rem; }
+}
+
+@media (min-width: 1200px) {
+    .btn-quienes { font-size: 1.781rem; }
+}
+
+/* =========================================================
+   BLOQUES DE MARCA (franjas alternadas con texto e imagen)
+   ========================================================= */
+.bloque-marca {
+    padding: 3rem 0;                          /* Alto de cada franja en celular */
+}
+
+@media (min-width: 992px) {
+    .bloque-marca {
+        padding: 4.5rem 0;                    /* Alto de cada franja en desktop */
+    }
+}
+
+/* Franja 1: fondo crema */
+.bloque-marca-crema {
+    background-color: #fff9f6;
+}
+
+/* Franja 2: fondo rosa */
+.bloque-marca-rosa {
+    background-color: #ffd9e2;
+}
+
+/* Títulos grandes de las franjas ("Una marca con los colores del vino.", "El futuro...") */
+.bloque-marca h2 {
+    margin-bottom: 1rem;
+    font-family: "Inknut Antiqua", serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Subtítulo ("Una marca abierta a todas las etiquetas") */
+.bloque-marca h3 {
+    margin: 1.5rem 0 0.5rem;
+    font-family: "Inknut Antiqua", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Texto corrido y items de la lista */
+.bloque-marca p,
+.bloque-marca li {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Lista de "Colores / Tipografía / Símbolo" */
+.bloque-marca ul {
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;                    /* Sangría de las viñetas */
+}
+
+.bloque-marca li {
+    margin-bottom: 0.5rem;
+}
+
+/* Las palabras en negrita de la lista (Colores:, Tipografía:, Símbolo:) van en bordó */
+.bloque-marca li strong {
+    color: #8b0028;
+}
+
+/* La imagen se adapta al ancho de su columna y mantiene su proporción */
+.img-marca {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;                    /* Esquinas levemente redondeadas */
+}
+
+/* Puntitos con los tres colores de vino (por ahora no se usan en el HTML, quedan disponibles) */
+.muestras-vino {
+    display: inline-flex;
+    gap: 0.4rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Cada puntito (círculo) */
+.muestra {
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 1px solid rgba(43, 26, 31, 0.3);
+    border-radius: 50%;
+}
+
+/* Color de cada puntito */
+.muestra-tinto  { background-color: #8b0028; }
+.muestra-blanco { background-color: #efe3a8; }
+.muestra-rosado { background-color: #ffd9e2; }
+
+/* Desktop: títulos y texto más grandes para que el texto ocupe casi todo el alto de la imagen y no queden huecos grandes (igual que en .texto-quienes) */
+@media (min-width: 992px) {
+    .bloque-marca h2 {
+        font-size: 2.5rem;
+    }
+
+    .bloque-marca h3 {
+        font-size: 2rem;
+    }
+
+    .bloque-marca p,
+    .bloque-marca li {
+        font-size: 1.75rem;
+        line-height: 1.6;
+    }
+}

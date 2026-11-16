@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes somos | Salud!</title>
+
+    <!-- Tipografías de la guía: Poppins (textos) e Inknut Antiqua (títulos y detalles) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inknut+Antiqua:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap (archivo local) -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <!-- Mi CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/styles.css">
+   
+<link rel="stylesheet" href="assets/bootstrap/css/quienes-somos.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+
+                <!-- Logo del navbar: lleva al inicio. Para cambiar el logo, reemplazar img/logo_salud!.png (el tamaño se ajusta en .logo-img de styles.css) -->
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/logo_salud!.png" alt="Salud!" class="logo-img">
+                </a>
+
+                <!-- Carrito + hamburguesa (en desktop queda solo el carrito, a la derecha) -->
+                <div class="d-flex align-items-center gap-2 order-lg-3 ms-auto ms-lg-3">
+                    <!-- Lleva a Productos, donde está el carrito de compras -->
+                    <a class="link-carrito" href="productos.html" aria-label="Ir al carrito de compras">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-end order-lg-2" id="mainNav">
+                    <!-- Links del menú. La clase "active" (fondo rosa) marca la página actual -->
+                    <ul class="navbar-nav align-items-lg-center salud-navlist">
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="quienes-somos.html" aria-current="page">Quiénes somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">Faq</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="fondo-crema">
+
+        <!-- ================= BANNER DE LA PÁGINA ================= -->
+        <section class="banner-pagina">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+                <h1>Quiénes somos</h1>
+                <p>Conocé quiénes somos</p>
+            </div>
+        </section>
+
+        <!-- ================= HISTORIA ================= -->
+        <section class="quienes-pagina">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+                <h2 class="titulo-seccion mb-4">Nuestra historia</h2>
+                <!-- Dos columnas en desktop (video | texto) que se apilan en celular. "g-lg-5" es la separación entre columnas. Estilos en quienes-somos.css -->
+                <div class="row g-4 g-lg-5">
+
+                    <!-- Columna izquierda: video -->
+                    <div class="col-12 col-lg-6">
+                        <div class="video-quienes">
+                            <video autoplay muted loop playsinline controls
+                                aria-label="Video de presentación de Salud!">
+                                <source src="video/quienes-somos.mp4" type="video/mp4">
+                                Tu navegador no puede reproducir este video.
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha: texto y botón -->
+                    <div class="col-12 col-lg-6 d-flex flex-column">
+                        <div class="texto-quienes d-flex flex-column justify-content-between flex-grow-1">
+                            <p>Todo empezó en 2020 con una idea simple y directa: acercar a Buenos Aires los mejores vinos argentinos, sin complicaciones ni vueltas. Queríamos que elegir una buena botella fuera una experiencia cercana, transparente y disfrutable para todos.</p>
+
+                            <p>Lo que nació como una selección pequeña hoy se ha convertido en una vinoteca curada con absoluta dedicación y asesoramiento experto. Trabajamos codo a codo junto a bodegas boutique de Mendoza, Salta y la Patagonia, seleccionando cuidadosamente cada etiqueta porque nos importa profundamente que cada botella tenga una historia única para contar y compartir en la mesa.</p>
+
+                            <p>Nuestro gran objetivo es acompañarte a descubrir el vino ideal para cada momento, ya sea una cena íntima, una reunión familiar, un regalo especial o un lindo brindis con amigos.</p>
+                        </div>
+
+                        <a href="productos.html" class="btn btn-bordo btn-quienes align-self-start">Ver nuestros vinos</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= LA MARCA: franja 1 (texto + imagen) ================= -->
+        <section class="bloque-marca bloque-marca-crema" aria-labelledby="marca-titulo">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+                <!-- Sin align-items-center: las dos columnas se estiran a la misma altura y el texto arranca alineado con el borde de arriba de la imagen -->
+                <div class="row g-4 g-lg-5">
+
+                    <!-- Texto (izquierda). d-flex flex-column justify-content-between: el título queda arriba y el último párrafo abajo, a la altura del borde de la imagen. En celular las columnas se apilan y no hay huecos -->
+                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-between">
+                        <h2 id="marca-titulo">Una marca con los colores del vino.</h2>
+                        <p>Cada decisión de diseño tiene un porqué:</p>
+                        <ul>
+                            <li><strong>Colores:</strong> los del vino. Bordó para el tinto, dorado suave para el blanco y rosa para el rosado.</li>
+                            <li><strong>Tipografía:</strong> clásica en los títulos y clara para leer, como una buena carta de vinos.</li>
+                            <li><strong>Símbolo:</strong> el signo de exclamación que cierra nuestro nombre, como el brindis.</li>
+                        </ul>
+                        <p>Salud! nació para representar todos los tipos de vino, no uno solo.</p>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <img src="img/capas_de_vino_tinto_blanco_rosado.png" class="img-marca" alt="Copas de vino tinto, blanco y rosado una al lado de la otra">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= LA MARCA: franja 2 (imagen + texto) ================= -->
+        <section class="bloque-marca bloque-marca-rosa" aria-labelledby="futuro-titulo">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+                <!-- Misma estructura que la franja 1 pero con la imagen a la izquierda (también sin align-items-center) -->
+                <div class="row g-4 g-lg-5">
+
+                    <!-- Imagen (izquierda en desktop). order-2 order-lg-1: en celular va después del texto -->
+                    <div class="col-12 col-lg-6 order-2 order-lg-1">
+                        <img src="img/brindis.jpg" class="img-marca" alt="Brindis con copas de vino">
+                    </div>
+
+                    <!-- Texto (derecha en desktop). order-1 order-lg-2: en celular va primero. Tres bloques (título, intro y subtítulo con su párrafo) repartidos en todo el alto de la imagen, para que el espacio quede parejo y el texto termine a la altura del borde de abajo -->
+                    <div class="col-12 col-lg-6 order-1 order-lg-2 d-flex flex-column justify-content-between">
+                        <h2 id="futuro-titulo">El futuro:<br>Lo que empieza con una copa.</h2>
+                        <p>Salud! es solo el comienzo. Creemos en los proyectos que nacen de la pasión por el vino, y esta historia recién empieza.</p>
+
+                        <div>
+                            <h3>Una marca abierta a todas las etiquetas</h3>
+                            <p>Nuestro nombre no pertenece a una sola bodega. En Salud! puede aparecer cualquier marca: cada etiqueta que elegimos suma un color nuevo a la mesa.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-salud">
+        <div class="container-xl px-3 px-md-4 px-lg-5">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-center">
+
+                <!-- Logo del footer (versión SVG, tamaño en .footer-logo de styles.css) -->
+                <a aria-label="Inicio" href="index.html" class="footer-brand">
+                    <img src="img/Salud!.svg" alt="Salud!" class="footer-logo">
+                </a>
+
+                <!-- Créditos del sitio (texto del medio) -->
+                <div class="footer-info">
+                    <p>Diseñado por Martín Singer y Laura Reinich</p>
+                    <p>Diseño Gráfico Digital . ORT . 2026</p>
+                </div>
+
+                <!-- Íconos de redes sociales: para cambiar a dónde llevan, editar el href de cada link (abren en pestaña nueva) -->
+                <div class="footer-social d-flex justify-content-center gap-3">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="img/icono_instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="img/icono_youtube.svg" alt="YouTube"></a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="img/icono_linkedin.svg" alt="LinkedIn"></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts al final del body -->
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

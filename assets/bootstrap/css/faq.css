@@ -1,0 +1,75 @@
+/* =========================================================
+   faq.css
+   ========================================================= */
+
+/* ===== SECCIÓN DE PREGUNTAS FRECUENTES ===== */
+.faq-pagina {
+    padding: 2rem 0 5rem;                     /* Espacio arriba y abajo en celular */
+}
+
+@media (min-width: 992px) {
+    .faq-pagina {
+        padding: 4rem 0 7rem;                 /* Más aire en desktop */
+    }
+}
+
+/* ===== ACORDEÓN (lista de preguntas que se abren y cierran) ===== */
+.faq-lista {
+    margin-top: 2rem;
+    /* Variables propias del acordeón de Bootstrap 5.3: cambian el ícono de la flechita por un + (cerrado) y un - (abierto) */
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.2' stroke-linecap='round'%3E%3Cpath d='M8 1v14M1 8h14'/%3E%3C/svg%3E");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.2' stroke-linecap='round'%3E%3Cpath d='M1 8h14'/%3E%3C/svg%3E");
+    --bs-accordion-btn-icon-width: 1.5rem;    /* Tamaño del + y del - */
+    --bs-accordion-btn-icon-transform: none;      /* Que no gire al abrirse */
+}
+
+/* Cada pregunta: sin fondo ni caja, solo una línea negra abajo */
+.faq-lista .accordion-item {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+}
+
+/* Botón con el texto de la pregunta (estado cerrado) */
+.faq-lista .accordion-button {
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    color: #000;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 2rem 0 5rem;                     /* Cerrada deja mucho espacio abajo (5rem); el 3er valor es el alto de la fila */
+}
+
+/* Botón de la pregunta cuando está abierta: se achica el espacio de abajo para que la respuesta quede cerca */
+.faq-lista .accordion-button:not(.collapsed) {
+    background: transparent;
+    color: #000;
+    padding-bottom: 1rem;
+}
+
+/* Ícono + / - */
+.faq-lista .accordion-button::after {
+    margin-top: 0.4rem;                           /* Centra el ícono con la primera línea de la pregunta */
+    margin-right: 0.5rem;
+}
+
+/* Texto de la respuesta que se despliega */
+.faq-lista .accordion-body {
+    padding: 0 3rem 2.5rem 0;                 /* Arriba / derecha / abajo / izquierda */
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Desktop: preguntas más grandes y el ícono baja un poco para seguir alineado */
+@media (min-width: 992px) {
+    .faq-lista .accordion-button {
+        font-size: 2rem;
+    }
+
+    .faq-lista .accordion-button::after {
+        margin-top: 0.75rem;
+    }
+}

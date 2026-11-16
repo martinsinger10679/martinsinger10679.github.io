@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Salud!</title>
+
+    <!-- Tipografías de la guía: Poppins (textos) e Inknut Antiqua (títulos y detalles) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inknut+Antiqua:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap (archivo local) -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <!-- Mi CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/styles.css">
+   
+<link rel="stylesheet" href="assets/bootstrap/css/servicios.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+
+                <!-- Logo del navbar: lleva al inicio. Para cambiar el logo, reemplazar img/logo_salud!.png (el tamaño se ajusta en .logo-img de styles.css) -->
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/logo_salud!.png" alt="Salud!" class="logo-img">
+                </a>
+
+                <!-- Carrito + hamburguesa (en desktop queda solo el carrito, a la derecha) -->
+                <div class="d-flex align-items-center gap-2 order-lg-3 ms-auto ms-lg-3">
+                    <!-- Lleva a Productos, donde está el carrito de compras -->
+                    <a class="link-carrito" href="productos.html" aria-label="Ir al carrito de compras">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-end order-lg-2" id="mainNav">
+                    <!-- Links del menú. La clase "active" (fondo rosa) marca la página actual -->
+                    <ul class="navbar-nav align-items-lg-center salud-navlist">
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="servicios.html" aria-current="page">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quienes-somos.html">Quiénes somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">Faq</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="fondo-crema">
+
+        <!-- ================= BANNER DE LA PÁGINA ================= -->
+        <section class="banner-pagina">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+                <h1>Servicios</h1>
+                <p>Más formas de disfrutar el vino</p>
+            </div>
+        </section>
+
+        <!-- ================= SERVICIOS ================= -->
+        <section class="seccion servicios-pagina">
+            <div class="container-xl px-3 px-md-4 px-lg-5">
+
+                <!-- Grilla de servicios: 1 columna en celular y 3 en desktop. "h-100" en cada card las iguala en altura. Los textos largos se estilan en servicios.css -->
+                <div class="row row-cols-1 row-cols-lg-3 g-4">
+
+                    <!-- Servicio 1 -->
+                    <div class="col">
+                        <article class="card card-servicio h-100">
+                            <img src="img/servicios_cata.png" class="card-img-top" alt="Copas de vino tinto, blanco y rosado">
+                            <div class="card-body">
+                                <h2 class="card-title">Catas y degustaciones</h2>
+                                <p class="card-text">Una experiencia guiada para conocer nuestros vinos de la mano de un sommelier. Probás distintas variedades, aprendés a reconocer aromas y sabores, y te llevás recomendaciones para elegir mejor la próxima vez. Es un plan ideal para ir en pareja, con amigos o para festejar una ocasión especial.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="col">
+                        <article class="card card-servicio h-100">
+                            <img src="img/servicios_envios.png" class="card-img-top" alt="Tabla de quesos y fiambres con una copa de vino">
+                            <div class="card-body">
+                                <h2 class="card-title">Envíos a domicilio</h2>
+                                <p class="card-text">Elegí tus vinos desde casa y te los llevamos donde estés. Cada botella viaja bien protegida para que llegue en perfecto estado, y te avisamos por mail cuando tu pedido está en camino. Si tenés dudas sobre zonas o plazos de entrega, escribinos y te respondemos a la brevedad.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="col">
+                        <article class="card card-servicio h-100">
+                            <img src="img/servicios_cajas.png" class="card-img-top" alt="Caja de regalo junto a una botella y dos copas">
+                            <div class="card-body">
+                                <h2 class="card-title">Cajas y regalos</h2>
+                                <p class="card-text">Armá tu propia caja o dejá que te ayudemos a elegir. Combinamos los vinos que más le gusten a quien los recibe y los presentamos listos para regalar, con un packaging cuidado y una tarjeta con tu mensaje. Funcionan muy bien para cumpleaños, fiestas, agradecimientos y regalos para empresas.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+                <!-- Botón hacia el formulario de contacto -->
+                <div class="text-center mt-5">
+                    <a href="contacto.html" class="btn btn-bordo btn-grande">Reservá tu experiencia</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-salud">
+        <div class="container-xl px-3 px-md-4 px-lg-5">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-center">
+
+                <!-- Logo del footer (versión SVG, tamaño en .footer-logo de styles.css) -->
+                <a aria-label="Inicio" href="index.html" class="footer-brand">
+                    <img src="img/Salud!.svg" alt="Salud!" class="footer-logo">
+                </a>
+
+                <!-- Créditos del sitio (texto del medio) -->
+                <div class="footer-info">
+                    <p>Diseñado por Martín Singer y Laura Reinich</p>
+                    <p>Diseño Gráfico Digital . ORT . 2026</p>
+                </div>
+
+                <!-- Íconos de redes sociales: para cambiar a dónde llevan, editar el href de cada link (abren en pestaña nueva) -->
+                <div class="footer-social d-flex justify-content-center gap-3">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="img/icono_instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="img/icono_youtube.svg" alt="YouTube"></a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="img/icono_linkedin.svg" alt="LinkedIn"></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts al final del body -->
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
