@@ -241,8 +241,83 @@
                 <h2 class="titulo-seccion">Por qué nos eligen</h2>
                 <p class="subtitulo-seccion">Más formas de disfrutar el vino.</p>
 
-                <!-- Carrusel de Bootstrap 5: cada diapositiva muestra 3 opiniones (sin autoplay, se pasa con las flechas) -->
-                <div id="opinionesCarousel" class="carousel slide">
+                <!-- Carrusel SOLO CELULAR (d-lg-none lo oculta en desktop): una opinión por diapositiva, 6 en total. Si se agrega o cambia una opinión, hacerlo también en el carrusel de desktop de abajo -->
+                <div id="opinionesCarouselMobile" class="carousel slide d-lg-none">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_magali.png" alt="Magalí Suoto">
+                                    </div>
+                                    <h3>Magalí Suoto</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“Excelente selección y atención. El Malbec llegó perfecto y bien embalado”.</p>
+                                </article>
+                        </div>
+                        <div class="carousel-item">
+                            <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_lucio.png" alt="Lucio Costa">
+                                    </div>
+                                    <h3>Lucio Costa</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“Muy buena variedad de vinos y precios claros. Lo recomiendo”.</p>
+                                </article>
+                        </div>
+                        <div class="carousel-item">
+                            <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_camila.png" alt="Camila Sere">
+                                    </div>
+                                    <h3>Camila Sere</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“Las catas son una gran experiencia. Volvería sin dudarlo”.</p>
+                                </article>
+                        </div>
+                        <div class="carousel-item">
+                            <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_sofia.png" alt="Sofía Ramírez">
+                                    </div>
+                                    <h3>Sofía Ramírez</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“Compré una caja de regalo para mi papá y fue un acierto total. Muy bien presentada”.</p>
+                                </article>
+                        </div>
+                        <div class="carousel-item">
+                            <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_federico.png" alt="Federico Paz">
+                                    </div>
+                                    <h3>Federico Paz</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“Me asesoraron para elegir un vino para una cena y salió todo perfecto”.</p>
+                                </article>
+                        </div>
+                        <div class="carousel-item">
+                            <article class="testimonio-card">
+                                    <div class="testimonio-avatar">
+                                        <img src="img/testimonio_valentina.png" alt="Valentina Gómez">
+                                    </div>
+                                    <h3>Valentina Gómez</h3>
+                                    <div class="stars" aria-label="5 estrellas">★★★★★</div>
+                                    <p>“El Torrontés es mi nuevo favorito. Comprar desde la web fue muy fácil”.</p>
+                                </article>
+                        </div>
+                    </div>
+
+                    <div class="opiniones-controles">
+                        <button class="flecha-opiniones" type="button" data-bs-target="#opinionesCarouselMobile" data-bs-slide="prev" aria-label="Opinión anterior">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2L4 8l6 6"/></svg>
+                        </button>
+                        <button class="flecha-opiniones" type="button" data-bs-target="#opinionesCarouselMobile" data-bs-slide="next" aria-label="Opinión siguiente">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2l6 6-6 6"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Carrusel SOLO DESKTOP (d-none d-lg-block lo oculta en celular): cada diapositiva muestra 3 opiniones (sin autoplay, se pasa con las flechas) -->
+                <div id="opinionesCarousel" class="carousel slide d-none d-lg-block">
                     <div class="carousel-inner">
 
                         <!-- Diapositiva 1 -->
